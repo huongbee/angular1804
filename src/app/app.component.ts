@@ -47,4 +47,11 @@ export class AppComponent {
     'second-class': false
   };
 
+  // event binding
+  valueInput: string;
+
+  getValue(input: any) {
+      this.valueInput = input.value;
+  }
+
 }
