@@ -28,7 +28,8 @@ export class AppComponent {
   myClass = 'color-red second-class';
 
   // style binding
-  myColor = 'red';
+  redColor = 'red';
+  blueColor = 'blue';
   fontSize = '40px';
 
   // ngStyle
@@ -37,5 +38,7 @@ export class AppComponent {
     height: '200px',
     backgroundColor: '#f3f3f3'
   };
+
+  isValid = false;
 
 }

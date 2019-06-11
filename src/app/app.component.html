@@ -1,9 +1,14 @@
 <p [class]="myClass">
   {{ title }}
 </p>
+<input placeholder="Enter name" [readonly]=isValid value="KPT">
+
+<input type="button" [disabled]=isValid value="Click">
+
 <!-- this is comment -->
 
-<p [style.color]="myColor" [style.fontSize]="fontSize"
+<p [style.color]="1==2 ? redColor : blueColor"
+  [style.fontSize]="fontSize"
   [ngStyle]="myStyle">
   {{ title }}
 </p>
