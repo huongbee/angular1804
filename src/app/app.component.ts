@@ -24,6 +24,18 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'angular1804';
 
-  myId = 'color-red';
+  // prop binding
+  myClass = 'color-red second-class';
+
+  // style binding
+  myColor = 'red';
+  fontSize = '40px';
+
+  // ngStyle
+  myStyle = {
+    width: '200px',
+    height: '200px',
+    backgroundColor: '#f3f3f3'
+  };
 
 }
