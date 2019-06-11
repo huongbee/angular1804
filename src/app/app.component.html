@@ -28,8 +28,11 @@ value="KPT" #myInput>
 value="KPT" #myInput02
 (keyup)="onKeyUp(myInput02.value)">
 <p>{{ myInput02.value }}</p>
-
-
+<hr>
+<!-- two way binding -->
+<input placeholder="Enter your name"
+value="KPT" [(ngModel)]="myInput03">
+<p>{{myInput03}}</p>
 
 <br>
 <br>
