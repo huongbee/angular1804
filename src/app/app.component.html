@@ -24,6 +24,10 @@ value="KPT" #myInput>
 <p>C1: {{ valueInput }}</p>
 <p>C2: {{ myInput.value }}</p>
 
+<input placeholder="Enter your name"
+value="KPT" #myInput02
+(keyup)="onKeyUp(myInput02.value)">
+<p>{{ myInput02.value }}</p>
 
 
 

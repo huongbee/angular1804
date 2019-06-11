@@ -53,5 +53,8 @@ export class AppComponent {
   getValue(input: any) {
       this.valueInput = input.value;
   }
+  onKeyUp(data: string) {
+    // console.log(data);
+  }
 
 }
