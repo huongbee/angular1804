@@ -41,4 +41,10 @@ export class AppComponent {
 
   isValid = false;
 
+  // ngClass
+  newClass = {
+    'color-red': true,
+    'second-class': false
+  };
+
 }
