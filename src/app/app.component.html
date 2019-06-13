@@ -33,6 +33,19 @@ value="KPT" #myInput02
 <input placeholder="Enter your name"
 value="KPT" [(ngModel)]="myInput03">
 <p>{{myInput03}}</p>
+<hr>
+
+<button>
+  HIDE
+</button>
+<p *ngIf="1==2 then thenContent else elseContent"></p>
+
+<!-- if -->
+<ng-template #thenContent><p>data is show</p></ng-template>
+
+<!-- else -->
+<ng-template #elseContent><p>data else</p></ng-template>
+
 
 <br>
 <br>

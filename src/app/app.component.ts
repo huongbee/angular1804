@@ -40,6 +40,7 @@ export class AppComponent {
   };
 
   isValid = false;
+  isShow = true;
 
   // ngClass
   newClass = {
