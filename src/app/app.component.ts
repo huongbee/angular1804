@@ -41,6 +41,9 @@ export class AppComponent {
 
   isValid = false;
   isShow = false;
+  arrNumber: number[] = [4, 1, 5, 6, 8];
+  // arrNumber: Array<number> = [4, 1, 5, 6];
+
 
   // ngClass
   newClass = {
@@ -57,5 +60,7 @@ export class AppComponent {
   onKeyUp(data: string) {
     // console.log(data);
   }
-
+  changeData(): boolean {
+    return this.isShow = !this.isShow;
+  }
 }

@@ -35,8 +35,8 @@ value="KPT" [(ngModel)]="myInput03">
 <p>{{myInput03}}</p>
 <hr>
 
-<button>
-  HIDE
+<button (click)="changeData()">
+  Change
 </button>
 <p *ngIf="isShow then thenContent else elseContent"></p>
 
@@ -48,6 +48,12 @@ value="KPT" [(ngModel)]="myInput03">
 
 <p *ngIf="isShow">data is show</p>
 <p *ngIf="!isShow">data else</p>
+
+<ul>
+  <li *ngFor="let item of arrNumber; index as i">
+    {{i+1}} - {{item}}
+  </li>
+</ul>
 
 <br>
 <br>
