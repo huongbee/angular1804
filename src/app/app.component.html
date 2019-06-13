@@ -38,7 +38,7 @@ value="KPT" [(ngModel)]="myInput03">
 <button>
   HIDE
 </button>
-<p *ngIf="1==2 then thenContent else elseContent"></p>
+<p *ngIf="isShow then thenContent else elseContent"></p>
 
 <!-- if -->
 <ng-template #thenContent><p>data is show</p></ng-template>
@@ -46,6 +46,8 @@ value="KPT" [(ngModel)]="myInput03">
 <!-- else -->
 <ng-template #elseContent><p>data else</p></ng-template>
 
+<p *ngIf="isShow">data is show</p>
+<p *ngIf="!isShow">data else</p>
 
 <br>
 <br>
