@@ -53,5 +53,12 @@ export class SignupComponent implements OnInit {
     }
     return false;
   }
+  checkInputValid(inputName: string): boolean {
+    const input = this.signUpForm.get(inputName);
+    if (input.touched && input.invalid) {
+      return true; // show message
+    }
+    return false;
+  }
 }
 
