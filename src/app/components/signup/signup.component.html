@@ -22,7 +22,7 @@
           <div class="form-group">
             <label>RePassword</label>
             <input class="form-control" type="password"  placeholder="Enter repassword" formControlName="repassword">
-            <small *ngIf="!passwordMustMatch()" class="text-danger">Password must match!</small>
+            <small *ngIf="passwordMustMatch()" class="text-danger">Password must match!</small>
           </div>
           <div class="form-group">
             <button class="btn btn-primary"

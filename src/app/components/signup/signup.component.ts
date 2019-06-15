@@ -43,13 +43,15 @@ export class SignupComponent implements OnInit {
     console.log(formValue, email);
   }
   passwordMustMatch(): boolean {
-    const password = (this.signUpForm.get('password').value as string).trim();
-    const repassword = (this.signUpForm.get('repassword').value as string).trim();
-    if (password === repassword && password !== null && repassword !== null) {
-      return true;
+    const password = this.signUpForm.get('password');
+    const repassword = this.signUpForm.get('repassword');
+    if (password.valid &&
+      password.value !== repassword.value &&
+      password.touched && repassword.touched
+      ) {
+      return true; // show message
     }
     return false;
-
   }
 }
 
