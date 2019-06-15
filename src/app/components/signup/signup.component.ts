@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { isGmail } from '../../validationInput';
 
 @Component({
   selector: 'app-signup',
@@ -17,10 +18,15 @@ export class SignupComponent implements OnInit {
       email: new FormControl('', [
         Validators.required,
         Validators.minLength(6),
-        Validators.email
+        Validators.email,
+        isGmail
       ]),
       name: new FormControl('', Validators.required),
-      age: new FormControl('', Validators.pattern('^[0-9]+$')),
+      age: new FormControl('', [
+        Validators.pattern('^[0-9]+$'),
+        Validators.max(100),
+        Validators.min(1)
+      ]),
       password: new FormControl('', [
         Validators.required,
         Validators.minLength(6)
@@ -36,5 +42,5 @@ export class SignupComponent implements OnInit {
     const email = this.signUpForm.get('email').value;
     console.log(formValue, email);
   }
-
 }
+
