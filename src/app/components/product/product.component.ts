@@ -9,6 +9,8 @@ import { Product, listProduct } from '../../types';
 export class ProductComponent implements OnInit {
 
   arrayProduct: Product[] = listProduct;
+  isShowForm = false;
+
   constructor() { }
 
   ngOnInit() {
@@ -27,5 +29,7 @@ export class ProductComponent implements OnInit {
     }
     product.wishlist = !product.wishlist;
   }
-
+  toggleForm(): boolean {
+    return this.isShowForm = !this.isShowForm;
+  }
 }
