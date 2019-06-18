@@ -20,5 +20,12 @@ export class ProductComponent implements OnInit {
     }
     return alert('Can not find product!');
   }
+  setWishlist(id: string) {
+    const product = this.arrayProduct.find(p => p._id === id);
+    if (!product) {
+      return alert('Cannot find product!');
+    }
+    product.wishlist = !product.wishlist;
+  }
 
 }
