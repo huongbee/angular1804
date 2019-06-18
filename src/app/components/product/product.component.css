@@ -21,3 +21,11 @@
 /* .card{
     margin: 10px 0
 } */
+.my-btn button{
+    width: calc((100% - 10px) / 2);
+    float: left;
+    margin-bottom: 20px
+}
+.my-btn button:last-child{
+    margin-left: 10px
+}
