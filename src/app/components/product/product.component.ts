@@ -8,6 +8,7 @@ import { Product, listProduct } from '../../types';
 })
 export class ProductComponent implements OnInit {
 
+  arrayProduct: Product[] = listProduct;
   constructor() { }
 
   ngOnInit() {
