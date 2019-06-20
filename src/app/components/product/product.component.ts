@@ -12,7 +12,7 @@ export class ProductComponent implements OnInit {
   arrayProduct: Product[] = listProduct;
   isShowForm = false;
   formAddProduct: FormGroup;
-  filterMode = 'SHOW_ALL';
+  filterMode = 'SHOW_ALL'; // init
 
   constructor(private fb: FormBuilder) {
     this.formAddProduct = this.fb.group({
@@ -47,5 +47,14 @@ export class ProductComponent implements OnInit {
     this.arrayProduct.unshift(product); // add first
     this.toggleForm(); // hide form
     this.formAddProduct.setValue({ name: '', price: '0'}); // clear value
+  }
+  get productFiltered(): Array<Product> {
+    if (this.filterMode === 'SHOW_WISHLIST') {
+      return this.arrayProduct.filter(product => product.wishlist);
+    }
+    if (this.filterMode === 'NONE_WISHLIST') {
+      return this.arrayProduct.filter(product => !product.wishlist);
+    }
+    return this.arrayProduct;
   }
 }
