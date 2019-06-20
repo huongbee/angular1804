@@ -4,9 +4,21 @@ import { Component } from '@angular/core';
     selector: 'app-parent',
     template: `
         <h2>Parent Component</h2>
-        <app-child [nameFromParent]="name"></app-child>
+        <b>{{txtAge}}</b>
+        <p>{{value}}</p>
+        <app-child
+        [nameFromParent]="name"
+        (sendToParent)="getData($event)"
+        ></app-child>
     `
 })
 export class ParentComponent {
     name = 'Admin';
+    txtAge: number;
+
+    value = 1;
+
+    getData(data: number) {
+        this.txtAge = data;
+    }
 }
