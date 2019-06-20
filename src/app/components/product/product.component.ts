@@ -12,6 +12,7 @@ export class ProductComponent implements OnInit {
   arrayProduct: Product[] = listProduct;
   isShowForm = false;
   formAddProduct: FormGroup;
+  filterMode = 'SHOW_ALL';
 
   constructor(private fb: FormBuilder) {
     this.formAddProduct = this.fb.group({
