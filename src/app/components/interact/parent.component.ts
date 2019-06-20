@@ -4,9 +4,9 @@ import { Component } from '@angular/core';
     selector: 'app-parent',
     template: `
         <h2>Parent Component</h2>
-        <app-child></app-child>
+        <app-child [nameFromParent]="name"></app-child>
     `
 })
 export class ParentComponent {
-
+    name = 'Admin';
 }
