@@ -7,13 +7,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DemoComponent } from './components/demo.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { ProductComponent } from './components/product/product.component';
+import { ParentComponent } from './components/interact/parent.component';
+import { ChildComponent } from './components/interact/child.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DemoComponent,
     SignupComponent,
-    ProductComponent
+    ProductComponent,
+    ParentComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,
