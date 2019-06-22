@@ -11,13 +11,13 @@
                 <!-- pipe -->
                 <p class="card-text">{{product.price | number }}</p>
                 <div class="button">
-                    <a *ngIf="!product.wishlist" href="#" class="btn btn-primary"
+                    <a *ngIf="!product.wishlist" class="btn btn-primary"
                     (click)="setWishlist(product._id)"
                     >Add to wishlist</a>
-                    <a *ngIf="product.wishlist" href="#" class="btn btn-warning"
+                    <a *ngIf="product.wishlist" class="btn btn-warning"
                     (click)="setWishlist(product._id)"
                     >Remove to wishlist</a>
-                    <a href="#" class="btn btn-danger" 
+                    <a class="btn btn-danger" 
                     (click)="removeProduct(product._id)"
                     >Remove</a>
                 </div>

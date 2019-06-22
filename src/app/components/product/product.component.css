@@ -29,3 +29,6 @@
 .my-btn button:last-child{
     margin-left: 10px
 }
+a{
+    color: #fff!important;
+}
