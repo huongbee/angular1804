@@ -9,6 +9,9 @@ import { SignupComponent } from './components/signup/signup.component';
 import { ProductComponent } from './components/product/product.component';
 import { ParentComponent } from './components/interact/parent.component';
 import { ChildComponent } from './components/interact/child.component';
+import { AddProductComponent } from './components/product/add-product.component';
+import { FilterProductComponent } from './components/product/filter-product.component';
+import { ItemProductComponent } from './components/product/item-product.compoment';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { ChildComponent } from './components/interact/child.component';
     SignupComponent,
     ProductComponent,
     ParentComponent,
-    ChildComponent
+    ChildComponent,
+    AddProductComponent,
+    FilterProductComponent,
+    ItemProductComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,28 @@
+<div class="row justify-content-center">
+    <div class="col-6">
+        <div 
+        *ngFor="let product of productFiltered" >
+          <div class="card mb-2">
+              <div class="card-body">
+                <div class="name">
+                    <h5 class="card-title">{{product.name}}</h5>
+                    <p *ngIf="product.wishlist"><i class="fas fa-heart"></i></p>
+                </div>
+                <!-- pipe -->
+                <p class="card-text">{{product.price | number }}</p>
+                <div class="button">
+                    <a *ngIf="!product.wishlist" href="#" class="btn btn-primary"
+                    (click)="setWishlist(product._id)"
+                    >Add to wishlist</a>
+                    <a *ngIf="product.wishlist" href="#" class="btn btn-warning"
+                    (click)="setWishlist(product._id)"
+                    >Remove to wishlist</a>
+                    <a href="#" class="btn btn-danger" 
+                    (click)="removeProduct(product._id)"
+                    >Remove</a>
+                </div>
+              </div>
+          </div>
+        </div>
+    </div>
+  </div>
