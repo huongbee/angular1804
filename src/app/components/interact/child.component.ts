@@ -8,9 +8,8 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
         <br>
         <button (click)="send()">Send</button>
         <br>
-
-        <button>Increase</button>
-        <button>Decrease</button>
+        <button (click)="increase()">Increase</button>
+        <button (click)="decrease()">Decrease</button>
     `
 })
 export class ChildComponent {
@@ -18,8 +17,17 @@ export class ChildComponent {
     @Output() sendToParent = new EventEmitter();
     age = 10;
 
+    @Input() number: number;
+    @Output() numberOutput = new EventEmitter();
+
     send() {
         this.sendToParent.emit(this.age);
+    }
+    increase() {
+        this.numberOutput.emit(this.number + 1);
+    }
+    decrease() {
+        this.numberOutput.emit(this.number - 1);
     }
 
 }

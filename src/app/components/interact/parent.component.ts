@@ -9,6 +9,8 @@ import { Component } from '@angular/core';
         <app-child
         [nameFromParent]="name"
         (sendToParent)="getData($event)"
+        [number]="value"
+        (numberOutput)="getNumber($event)"
         ></app-child>
     `
 })
@@ -20,5 +22,8 @@ export class ParentComponent {
 
     getData(data: number) {
         this.txtAge = data;
+    }
+    getNumber(value: number) {
+        this.value = value;
     }
 }
