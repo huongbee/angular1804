@@ -10,10 +10,14 @@ export class ProductComponent implements OnInit {
 
   products: Array<Product> = listProduct;
   isShowForm = false;
+  filterMode = 'SHOW_ALL';
 
   constructor() {
   }
 
   ngOnInit() {
+  }
+  getFilter(filter: string) {
+    this.filterMode = filter;
   }
 }

@@ -3,8 +3,12 @@
   [isShowForm]="isShowForm"
   [products]="products"
   ></app-add-product>
-  <app-filter-product></app-filter-product>
+  <app-filter-product
+  [filterMode]="filterMode"
+  (filter)="getFilter($event)"
+  ></app-filter-product>
   <app-item-product
   [arrayProduct]="products"
+  [filterMode]="filterMode"
   ></app-item-product>
 </div>

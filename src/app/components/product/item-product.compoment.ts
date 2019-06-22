@@ -9,6 +9,7 @@ import { Product } from '../../types';
 export class ItemProductComponent implements OnInit {
 
   @Input() arrayProduct: Product[];
+  @Input() filterMode: string;
 
   constructor() {
   }
