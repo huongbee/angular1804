@@ -9,6 +9,8 @@ import { Product, listProduct } from 'src/app/types';
 export class ProductComponent implements OnInit {
 
   products: Array<Product> = listProduct;
+  isShowForm = false;
+
   constructor() {
   }
 

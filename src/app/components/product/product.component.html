@@ -1,5 +1,8 @@
 <div class="container">
-  <app-add-product></app-add-product>
+  <app-add-product
+  [isShowForm]="isShowForm"
+  [products]="products"
+  ></app-add-product>
   <app-filter-product></app-filter-product>
   <app-item-product
   [arrayProduct]="products"

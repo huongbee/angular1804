@@ -6,7 +6,7 @@
       <br>
     </div>
   </div>
-<div class="row justify-content-center">
+<div class="row justify-content-center" *ngIf="isShowForm">
     <div class="col-6">
         <form [formGroup]="formAddProduct" (submit)="addProduct()">
           <div class="form-group">
