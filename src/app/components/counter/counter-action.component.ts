@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
 @Component({
     selector: 'app-counter-action',
     template: `
@@ -10,4 +11,15 @@ import { Component } from '@angular/core';
 })
 export class CounterActionComponent {
 
+    constructor(private store: Store<number>) {}
+
+    increment() {
+        this.store.dispatch({ type: 'INCREASE' });
+    }
+    decrement() {
+        this.store.dispatch({ type: 'DECREASE' });
+    }
+    reset() {
+        this.store.dispatch({ type: 'RESET' });
+    }
 }
