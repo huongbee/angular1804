@@ -17,7 +17,7 @@ export class ItemProductComponent implements OnInit {
   ngOnInit() {
   }
   removeProduct(id: string) {
-    const index = this.arrayProduct.findIndex(p => p._id === id)
+    const index = this.arrayProduct.findIndex(p => p._id === id);
     if (index < 0) {
       alert('Cannot find product!');
       return;
@@ -31,5 +31,14 @@ export class ItemProductComponent implements OnInit {
       return;
     }
     product.wishlist = !product.wishlist;
+  }
+  get productFilter(): Array<Product> {
+    if (this.filterMode === 'SHOW_WISHLIST') {
+      return this.arrayProduct.filter(e => e.wishlist);
+    }
+    if (this.filterMode === 'NONE_WISHLIST') {
+      return this.arrayProduct.filter(e => !e.wishlist);
+    }
+    return this.arrayProduct;
   }
 }

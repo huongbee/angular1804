@@ -12,6 +12,8 @@ import { ChildComponent } from './components/interact/child.component';
 import { AddProductComponent } from './components/product/add-product.component';
 import { FilterProductComponent } from './components/product/filter-product.component';
 import { ItemProductComponent } from './components/product/item-product.compoment';
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './reducers';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import { ItemProductComponent } from './components/product/item-product.compomen
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    StoreModule.forRoot(reducers, { metaReducers })
   ],
   providers: [],
   bootstrap: [AppComponent]
