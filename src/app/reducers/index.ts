@@ -1,7 +1,7 @@
 import { Action } from '@ngrx/store';
 
 // state must be pure
-export function counterReducer(state: number = 0, action: Action) {
+export function counterReducer(state: number = 10, action: Action) {
   if (action.type === 'INCREASE') {
     return state + 1;
   }
