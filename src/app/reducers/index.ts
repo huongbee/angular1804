@@ -1,19 +1,15 @@
-import {
-  ActionReducer,
-  ActionReducerMap,
-  createFeatureSelector,
-  createSelector,
-  MetaReducer
-} from '@ngrx/store';
-import { environment } from '../../environments/environment';
+import { Action } from '@ngrx/store';
 
-export interface State {
-
+// state must be pure
+export function counterReducer(state: number = 0, action: Action) {
+  if (action.type === 'INCREASE') {
+    return state + 1;
+  }
+  if (action.type === 'DECREASE') {
+    return state - 1;
+  }
+  if (action.type === 'RESET') {
+    return 0;
+  }
+  return state;
 }
-
-export const reducers: ActionReducerMap<State> = {
-
-};
-
-
-export const metaReducers: MetaReducer<State>[] = !environment.production ? [] : [];

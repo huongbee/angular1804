@@ -13,7 +13,9 @@ import { AddProductComponent } from './components/product/add-product.component'
 import { FilterProductComponent } from './components/product/filter-product.component';
 import { ItemProductComponent } from './components/product/item-product.compoment';
 import { StoreModule } from '@ngrx/store';
-import { reducers, metaReducers } from './reducers';
+import { counterReducer } from './reducers/index';
+import { CounterComponent } from './components/counter/counter.component';
+import { CounterActionComponent } from './components/counter/counter-action.component';
 
 @NgModule({
   declarations: [
@@ -25,14 +27,18 @@ import { reducers, metaReducers } from './reducers';
     ChildComponent,
     AddProductComponent,
     FilterProductComponent,
-    ItemProductComponent
+    ItemProductComponent,
+    CounterComponent,
+    CounterActionComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    StoreModule.forRoot(reducers, { metaReducers })
+    StoreModule.forRoot({
+      counter: counterReducer
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
