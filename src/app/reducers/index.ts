@@ -19,7 +19,8 @@ export function productReducer(
   state: Array<Product> = listProduct,
   action: any
 ): Array<Product> {
-  if (action.type === 'ADD_PRODUCT') return ;
+  if (action.type === 'ADD_PRODUCT')
+    return [ action.product, ...state ];
   if(action.type === 'REMOVE_PRODUCT')
     return state.filter(element => element._id !== action._id )
   if(action.type === 'FILTER_PRODUCT')
