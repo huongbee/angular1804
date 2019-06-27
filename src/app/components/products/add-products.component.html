@@ -1,0 +1,27 @@
+<br>
+  <div class="row justify-content-center" *ngIf="!isShowForm">
+    <div class="col-6">
+      <button class="btn btn-success" (click)="toggleForm()">ADD</button>
+      <br>
+      <br>
+    </div>
+  </div>
+<div class="row justify-content-center" *ngIf="isShowForm">
+    <div class="col-6">
+        <form [formGroup]="formAddProduct" (submit)="addProduct()">
+          <div class="form-group">
+            <label>Name:</label>
+            <input class="form-control" formControlName="name" type="text" placeholder="Name">
+          </div>
+          <div class="form-group">
+            <label>Price:</label>
+            <input class="form-control" type="text" placeholder="Price" formControlName="price">
+          </div>
+          <div class="form-group my-btn">
+            <button class="btn btn-primary" type="submit">ADD</button>
+            <button class="btn btn-danger" type="button" (click)="toggleForm()">CANCEL</button>
+          </div>
+        </form>
+        <br>
+      </div>
+</div>

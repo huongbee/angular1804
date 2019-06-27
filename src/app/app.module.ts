@@ -16,6 +16,12 @@ import { StoreModule } from '@ngrx/store';
 import { counterReducer } from './reducers/index';
 import { CounterComponent } from './components/counter/counter.component';
 import { CounterActionComponent } from './components/counter/counter-action.component';
+import { ProductsComponent } from './components/products/products.component';
+import { AddProductsComponent } from './components/products/add-products.component';
+import { FilterProductsComponent } from './components/products/filter-products.component';
+import { ItemProductsComponent } from './components/products/item-products.component';
+
+
 
 @NgModule({
   declarations: [
@@ -29,7 +35,11 @@ import { CounterActionComponent } from './components/counter/counter-action.comp
     FilterProductComponent,
     ItemProductComponent,
     CounterComponent,
-    CounterActionComponent
+    CounterActionComponent,
+    ProductsComponent,
+    AddProductsComponent,
+    FilterProductsComponent,
+    ItemProductsComponent
   ],
   imports: [
     BrowserModule,

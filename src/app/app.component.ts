@@ -3,8 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: '#app-root',
   template: `
-    <app-counter></app-counter>
-    <app-counter-action></app-counter-action>
+    <app-products></app-products>
   `,
   // styles: [
   //   `
