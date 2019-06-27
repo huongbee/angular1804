@@ -13,7 +13,7 @@ import { AddProductComponent } from './components/product/add-product.component'
 import { FilterProductComponent } from './components/product/filter-product.component';
 import { ItemProductComponent } from './components/product/item-product.compoment';
 import { StoreModule } from '@ngrx/store';
-import { counterReducer } from './reducers/index';
+import { counterReducer, productReducer } from './reducers/index';
 import { CounterComponent } from './components/counter/counter.component';
 import { CounterActionComponent } from './components/counter/counter-action.component';
 import { ProductsComponent } from './components/products/products.component';
@@ -47,7 +47,8 @@ import { ItemProductsComponent } from './components/products/item-products.compo
     FormsModule,
     ReactiveFormsModule,
     StoreModule.forRoot({
-      counter: counterReducer
+      counter: counterReducer,
+      product: productReducer
     })
   ],
   providers: [],
