@@ -20,10 +20,15 @@ export function productReducer(
   action: any
 ): Array<Product> {
   if (action.type === 'ADD_PRODUCT') return ;
-  if(action.type === 'REMOVE_PRODUCT'){
+  if(action.type === 'REMOVE_PRODUCT')
     return state.filter(element => element._id !== action._id )
-  }
-  if(action.type === 'FILTER_PRODUCT') return ;
-  if(action.type === 'SET_WISHLIST_PRODUCT') return ;
+  if(action.type === 'FILTER_PRODUCT')
+    return ;
+  if(action.type === 'SET_WISHLIST_PRODUCT')
+    return state.map(element=> {
+      if(element._id === action._id)
+        element.wishlist = !element.wishlist;
+      return element;
+    })
   return state;
 }

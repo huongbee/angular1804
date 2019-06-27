@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-add-products',
@@ -6,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./products.component.css']
 })
 export class AddProductsComponent implements OnInit {
-
+  formAddProduct: FormGroup;
+  
   constructor() { }
 
   ngOnInit() {

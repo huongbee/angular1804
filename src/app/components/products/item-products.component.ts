@@ -21,4 +21,7 @@ export class ItemProductsComponent implements OnInit {
   removeProduct(id: string){
     this.store.dispatch({ type: 'REMOVE_PRODUCT', _id: id });
   }
+  setWishlist(id: string){
+    this.store.dispatch({ type: 'SET_WISHLIST_PRODUCT', _id: id });
+  }
 }
