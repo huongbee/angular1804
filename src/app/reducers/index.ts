@@ -1,5 +1,6 @@
 import { Action } from '@ngrx/store';
 import { Product, listProduct } from '../types';
+import { stat } from 'fs';
 
 export function counterReducer(state: number = 0, action: Action) {
   if (action.type === 'INCREASE') {
@@ -31,5 +32,14 @@ export function productReducer(
         element.wishlist = !element.wishlist;
       return element;
     })
+  return state;
+}
+
+export function productApiReducer(
+  state: Product[] = null,
+  action: any): Product[]
+{
+  if(action.type === 'INIT_PRODUCT')
+    return action.products;
   return state;
 }

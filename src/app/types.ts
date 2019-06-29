@@ -3,6 +3,7 @@ export interface Product {
     name: string;
     price: number;
     wishlist?: boolean;
+    __v? : number; 
 }
 
 export const listProduct: Array<Product> = [
