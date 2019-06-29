@@ -4,8 +4,7 @@ import { HttpClient } from '@angular/common/http';
 @Component({
   selector: '#app-root',
   template: `
-    <!-- <app-products></app-products> -->
-    City id: {{ idCity }}
+    <app-product-api></app-product-api>
   `,
   // styles: [
   //   `

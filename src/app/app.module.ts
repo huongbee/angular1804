@@ -21,6 +21,7 @@ import { AddProductsComponent } from './components/products/add-products.compone
 import { FilterProductsComponent } from './components/products/filter-products.component';
 import { ItemProductsComponent } from './components/products/item-products.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ProductApiComponent } from './components/product-api/product-api.component';
 
 
 
@@ -40,7 +41,8 @@ import { HttpClientModule } from '@angular/common/http';
     ProductsComponent,
     AddProductsComponent,
     FilterProductsComponent,
-    ItemProductsComponent
+    ItemProductsComponent,
+    ProductApiComponent
   ],
   imports: [
     BrowserModule,
