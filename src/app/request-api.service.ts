@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Product } from './types';
+import { Product, ServerResponse } from './types';
 
 @Injectable()
 export class RequestApiService {
@@ -9,11 +9,12 @@ export class RequestApiService {
 
   constructor(private http: HttpClient) {}
 
-  getAllProduct(): Array<Product> {
-    this.http.get(`${this.url}product`)
+  async getAllProduct(): Promise<Array<Product>>{
+    return this.http.get(`${this.url}product`)
     .toPromise()
-    .then(result => {
-      return result;
-    });
+    .then((result: ServerResponse) => {
+      return Promise.resolve(result.products);
+    })
+    .catch(err=> Promise.reject(err));
   }
 }

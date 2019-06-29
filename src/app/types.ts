@@ -16,5 +16,5 @@ export interface ServerResponse{
     success: boolean;
     message?: string;
     products?: Array<Product>;
-    product: Product
+    product?: Product
 }
