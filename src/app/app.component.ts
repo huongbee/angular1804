@@ -4,7 +4,8 @@ import { HttpClient } from '@angular/common/http';
 @Component({
   selector: '#app-root',
   template: `
-    <app-products></app-products>
+    <!-- <app-products></app-products> -->
+    City id: {{ idCity }}
   `,
   // styles: [
   //   `
@@ -23,9 +24,13 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent {
   url = 'https://api.openweathermap.org/data/2.5/find?appid=01cc37655736835b0b75f2b395737694&q=Hanoi';
+  idCity: number;
 
   constructor(private http: HttpClient){
-    
+    this.http.get(this.url)
+    .toPromise()
+    .then((result: any) => this.idCity = result.list[0].id)
+    .catch(error => console.log(error))
   }
   title = 'angular1804';
 

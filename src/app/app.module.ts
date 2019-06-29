@@ -20,6 +20,7 @@ import { ProductsComponent } from './components/products/products.component';
 import { AddProductsComponent } from './components/products/add-products.component';
 import { FilterProductsComponent } from './components/products/filter-products.component';
 import { ItemProductsComponent } from './components/products/item-products.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -49,7 +50,8 @@ import { ItemProductsComponent } from './components/products/item-products.compo
     StoreModule.forRoot({
       counter: counterReducer,
       product: productReducer
-    })
+    }),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
