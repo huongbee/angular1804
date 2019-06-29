@@ -13,7 +13,7 @@ import { AddProductComponent } from './components/product/add-product.component'
 import { FilterProductComponent } from './components/product/filter-product.component';
 import { ItemProductComponent } from './components/product/item-product.compoment';
 import { StoreModule } from '@ngrx/store';
-import { counterReducer, productReducer } from './reducers/index';
+import { counterReducer, productReducer, productApiReducer } from './reducers/index';
 import { CounterComponent } from './components/counter/counter.component';
 import { CounterActionComponent } from './components/counter/counter-action.component';
 import { ProductsComponent } from './components/products/products.component';
@@ -22,7 +22,7 @@ import { FilterProductsComponent } from './components/products/filter-products.c
 import { ItemProductsComponent } from './components/products/item-products.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductApiComponent } from './components/product-api/product-api.component';
-
+import { RequestApiService } from './request-api.service'
 
 
 @NgModule({
@@ -51,11 +51,14 @@ import { ProductApiComponent } from './components/product-api/product-api.compon
     ReactiveFormsModule,
     StoreModule.forRoot({
       counter: counterReducer,
-      product: productReducer
+      product: productReducer,
+      productApi: productApiReducer
     }),
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    RequestApiService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
