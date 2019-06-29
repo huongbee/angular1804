@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from '../../types';
+import { RequestApiService } from '../../request-api.service';
+import { Store } from '@ngrx/store';
+
 
 @Component({
   selector: 'app-product-api',
@@ -7,7 +11,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductApiComponent implements OnInit {
 
-  constructor() { }
+  products: Array<Product>;
+
+  constructor(
+    private requestService: RequestApiService,
+    private store: Store<Product[]>
+  ) {
+    this.requestService.getAllProduct()
+    .then((data: Array<Product>)=>{
+      this.store.dispatch({ type: 'INIT_PRODUCT', products: data })
+      
+      this.store.select('productApi').subscribe(arrayProduct => this.products = arrayProduct);
+      console.log(this.products)
+    })
+  }
 
   ngOnInit() {
   }
