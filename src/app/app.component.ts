@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: '#app-root',
@@ -21,6 +22,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  url = 'https://api.openweathermap.org/data/2.5/find?appid=01cc37655736835b0b75f2b395737694&q=Hanoi';
+
+  constructor(private http: HttpClient){
+    
+  }
   title = 'angular1804';
 
   // prop binding
