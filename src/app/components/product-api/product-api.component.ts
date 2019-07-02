@@ -49,5 +49,9 @@ export class ProductApiComponent implements OnInit {
     this.requestService.updateProduct(id, wishlist)
     .catch(err => this.message = err.message)
   }
+  onRemove(id: string){
+    this.requestService.deleteProduct(id)
+    .catch(err => this.message = err.message)
+  }
 
 }

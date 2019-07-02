@@ -27,7 +27,7 @@ export class RequestApiService {
       if(result.success){
         // update store
         this.store.dispatch({
-          type: 'ADD_PRODUCT',
+          type: 'ADD__PRODUCT',
           product: result.product
         })
       }
@@ -39,9 +39,19 @@ export class RequestApiService {
     return this.http.put(`${this.url}product/${_id}`, { wishlist })
     .toPromise()
     .then((result: ServerResponse)=>{
-      console.log(result)
       if(result.success){
         this.store.dispatch({ type: 'UPDATE_PRODUCT', product: result.product})
+      }
+      else return Promise.reject(new Error(result.message))
+    })
+    .catch(err=>Promise.reject(err))
+  }
+  async deleteProduct(_id: string){
+    return this.http.delete(`${this.url}product/${_id}`)
+    .toPromise()
+    .then((result: ServerResponse)=>{
+      if(result.success){
+        this.store.dispatch({ type: 'REMOVE__PRODUCT', _id: result.product._id})
       }
       else return Promise.reject(new Error(result.message))
     })

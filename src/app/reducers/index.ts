@@ -40,7 +40,7 @@ export function productApiReducer(
 {
   if(action.type === 'INIT_PRODUCT')
     return action.products;
-  if(action.type === 'ADD_PRODUCT')
+  if(action.type === 'ADD__PRODUCT')
     return [ ...state, action.product ];
   if(action.type === 'UPDATE_PRODUCT')
     return state.map(product => {
@@ -50,5 +50,7 @@ export function productApiReducer(
       }
       return product
     });
+  if(action.type === 'REMOVE__PRODUCT')
+    return state.filter(element => element._id !== action._id )
   return state;
 }
