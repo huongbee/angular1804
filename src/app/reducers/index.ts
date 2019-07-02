@@ -42,5 +42,13 @@ export function productApiReducer(
     return action.products;
   if(action.type === 'ADD_PRODUCT')
     return [ ...state, action.product ];
+  if(action.type === 'UPDATE_PRODUCT')
+    return state.map(product => {
+      if(product._id === action.product._id){ 
+        //action.product : from server
+        return product = action.product
+      }
+      return product
+    });
   return state;
 }

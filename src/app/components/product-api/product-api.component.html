@@ -22,10 +22,11 @@
   <div class="row justify-content-center">
     <div class="col-6">
       <div *ngFor="let product of products">
-        <p>Name: {{product.name}}</p>
+        <p *ngIf="product.wishlist" style="color: red">Name: {{product.name}}</p>
+        <p *ngIf="!product.wishlist" style="color: blue">Name: {{product.name}}</p>
         <p>Price: {{product.price | number}}</p>
         <button class="btn btn-warning"
-        (click)="onUpdate(product._id)">Update</button>
+        (click)="onUpdate(product._id, !product.wishlist)">Update</button>
 
         <button class="btn btn-danger" style="margin-left: 10px"
         (click)="onRemove(product._id)">Remove</button>

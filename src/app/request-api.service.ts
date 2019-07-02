@@ -35,4 +35,16 @@ export class RequestApiService {
     })
     .catch(err=>Promise.reject(err))
   }
+  async updateProduct(_id: string, wishlist: boolean){
+    return this.http.put(`${this.url}product/${_id}`, { wishlist })
+    .toPromise()
+    .then((result: ServerResponse)=>{
+      console.log(result)
+      if(result.success){
+        this.store.dispatch({ type: 'UPDATE_PRODUCT', product: result.product})
+      }
+      else return Promise.reject(new Error(result.message))
+    })
+    .catch(err=>Promise.reject(err))
+  }
 }
