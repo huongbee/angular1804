@@ -18,21 +18,17 @@
   </div>
   <div class="row justify-content-center">
     <div class="col-6">
-      <div>
-        <p>Name: </p>
-        <p>Price: </p>
-        <button class="btn btn-warning">Update</button>
-        <button class="btn btn-danger" style="margin-left: 10px">Remove</button>
+      <div *ngFor="let product of products">
+        <p>Name: {{product.name}}</p>
+        <p>Price: {{product.price | number}}</p>
+        <button class="btn btn-warning"
+        (click)="onUpdate(product._id)">Update</button>
+
+        <button class="btn btn-danger" style="margin-left: 10px"
+        (click)="onRemove(product._id)">Remove</button>
         <hr>
       </div>
-      <div>
-        <p>Name: </p>
-        <p>Price: </p>
-        <button class="btn btn-warning">Update</button>
-        <button class="btn btn-danger" style="margin-left: 10px">Remove</button>
-        <hr>
-      </div>
-      {{ products | json }}
+      {{ products | json}}
     </div>
   </div>
 </div>
