@@ -1,6 +1,9 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-6">
+      <div *ngIf="message" class="alert alert-danger">
+          {{message}}
+      </div>
       <form [formGroup]="formAdd" (submit)="onAddProduct()">
         <div class="form-group">
           <label for="name">Name: </label>
@@ -28,7 +31,7 @@
         (click)="onRemove(product._id)">Remove</button>
         <hr>
       </div>
-      {{ products | json}}
+      <!-- {{ products | json}} -->
     </div>
   </div>
 </div>

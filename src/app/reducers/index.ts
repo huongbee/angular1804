@@ -40,5 +40,7 @@ export function productApiReducer(
 {
   if(action.type === 'INIT_PRODUCT')
     return action.products;
+  if(action.type === 'ADD_PRODUCT')
+    return [ ...state, action.product ];
   return state;
 }

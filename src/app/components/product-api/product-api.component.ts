@@ -14,6 +14,7 @@ export class ProductApiComponent implements OnInit {
 
   products: Array<Product>;
   formAdd: FormGroup;
+  message: string;
 
   constructor(
     private requestService: RequestApiService,
@@ -30,11 +31,19 @@ export class ProductApiComponent implements OnInit {
       this.store.dispatch({ type: 'INIT_PRODUCT', products: data })
       
       this.store.select('productApi').subscribe(arrayProduct => this.products = arrayProduct);
-      console.log(this.products)
     })
   }
 
   ngOnInit() {
+  }
+  onAddProduct(){
+    this.message = null;
+    const { name, price } = this.formAdd.value;
+    this.requestService.addProduct(name, price)
+    .catch(err => this.message = err.message)
+    .then(()=>{
+      this.formAdd.setValue({name:'', price: 0})
+    })
   }
 
 }
